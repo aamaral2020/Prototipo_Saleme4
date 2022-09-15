@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fiscal_printer_pos_config_form" model="ir.ui.view">
+        <field name="name">fiscal.printer.pos.config.form.</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h2[@name='order']" position="before">
+                <h2 name="POS12" groups="base.group_system">Impresora Fiscal</h2>
+                <div class="row mt16 o_settings_container"  groups="base.group_system">  
+                     <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="use_fiscal_printer" />
+                        </div>
+
+                        <div class="o_setting_right_pane">
+                            <label for="use_fiscal_printer"/>
+                                                                
+                        </div>
+                    </div>                     
+                    <div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible': [('use_fiscal_printer', '=', False)]}">
+                        <div class="o_setting_right_pane" >
+                            <label for="proxy_fiscal_printer"/> 
+                            <div class="text-muted">
+                                IP
+                            </div>                           
+                            <field name="proxy_fiscal_printer" />   
+                        </div>        
+                        <div class="o_setting_right_pane" >
+                            <label for="version_printer"/>                                                  
+                            <field name="version_printer" required='1' />   
+                        </div>                        
+                    </div>
+                </div>
+               
+            </xpath>
+        </field>
+        </record>       
+  </data>
+</odoo>

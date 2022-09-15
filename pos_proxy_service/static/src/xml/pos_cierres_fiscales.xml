@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  
+
+
+  <t t-name="CfTicketButtons" owl="1">
+    <span class="control-button create_so odoo-theme-color">
+      <i class="with-badge"></i>
+      <i class="fa fa-ticket" aria-hidden="true"></i>
+      <span>CF</span>
+    </span>
+  </t>
+
+
+
+
+    <t t-inherit="point_of_sale.Chrome" t-inherit-mode="extension">
+       <xpath expr="//TicketButton" position="inside">
+        <t t-if="env.pos.config.use_fiscal_printer">
+               <CfTicketButtons isTicketScreenShown="isTicketScreenShown" />
+             </t>
+       </xpath>
+   
+   </t>
+  
+
+</templates>

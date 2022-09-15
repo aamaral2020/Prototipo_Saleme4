@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   
+    <record model="ir.ui.view" id="fiscal_printer_uom_form">
+        <field name="name">fiscal.printer.uom.form</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_form_view"/>
+        <field name="arch" type="xml">            
+            <data>                 
+                <xpath expr="//field[@name='rounding']" position="after">
+                     <field name="afip_uom" required='1'/>
+                </xpath>                
+            </data>
+        </field>
+    </record>
+  
+</odoo>
